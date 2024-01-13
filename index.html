@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Age Calculator</title>
+   
+     <style>
+       body {
+         font-family: 'Arial', sans-serif;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+         margin: 0;
+         background-color: #f4f4f4;
+       }
+   
+       .container {
+         text-align: center;
+         background-color: #fff;
+         border-radius: 8px;
+         padding: 20px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       }
+   
+       label {
+         display: block;
+         margin-top: 10px;
+       }
+   
+       input {
+         width: 100%;
+         padding: 8px;
+         margin-top: 6px;
+         margin-bottom: 12px;
+         box-sizing: border-box;
+       }
+   
+       button {
+         background-color: #4caf50;
+         color: white;
+         padding: 10px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+       }
+   
+       button:hover {
+         background-color: #45a049;
+       }
+   
+       #result {
+         margin-top: 20px;
+         font-weight: bold;
+       }
+     </style>
+   </head>
+   <body>
+     <div class="container">
+       <h1>Age Calculator</h1>
+       <label for="birthdate">Enter your birth date:</label>
+       <input type="date" id="birthdate" max="9999-12-31" required>
+       <label for="birthtime">Enter your birth time:</label>
+       <input type="time" id="birthtime" required>
+       <button onclick="calculateAge()">Calculate Age</button>
+       <p id="result"></p>
+     </div>
+   
+     <script>
+       function calculateAge() {
+         var birthdateInput = document.getElementById("birthdate").value;
+         var birthtimeInput = document.getElementById("birthtime").value;
+   
+         if (!birthdateInput || !birthtimeInput) {
+           alert("Please enter both your birth date and time.");
+           return;
+         }
+   
+         var birthDateTimeInput = birthdateInput + "T" + birthtimeInput;
+         var birthDateTime = new Date(birthDateTimeInput);
+         var currentDateTime = new Date();
+   
+         var millisecondsDiff = currentDateTime - birthDateTime;
+   
+         var seconds = Math.floor(millisecondsDiff / 1000);
+         var minutes = Math.floor(seconds / 60);
+         var hours = Math.floor(minutes / 60);
+         var days = Math.floor(hours / 24);
+         var months = Math.floor(days / 30.44); // average number of days in a month
+         var years = Math.floor(months / 12);
+   
+         // Calculate remaining time
+         var remainingHours = hours % 24;
+         var remainingMinutes = minutes % 60;
+         var remainingSeconds = seconds % 60;
+   
+         // Calculate remaining months after removing complete years
+         var remainingMonths = months % 12;
+   
+         var result = "Age: " + years + " years, " +
+                      remainingMonths + " months, " +
+                      remainingHours + " hours, " +
+                      remainingMinutes + " minutes, " +
+                      remainingSeconds + " seconds";
+   
+         document.getElementById("result").innerHTML = result;
+       }
+     </script>
+   </body>
+   </html>
+
+    <script>
+   
+        //Object
+        /*let ob = {
+            name :'Ram',
+            city:'Nagpur'
+        }
+        console.log(ob)
+         
+        //Array
+        let arr=[1,2,"Harsh al",4,5];
+        console.log(arr)
+
+        //Oprator
+        let a=10;
+        let b=100;
+        console.log("Addition of two number is : ", a+b)
+        console.log("Substraction of two number is : ", a-b)
+        console.log("Multiplication of two number is : ", a*b)
+        console.log("Division of two number is : ", a/b)
+
+     let c=b;
+     console.log(" c",c)
+
+
+         //comparision operator
+
+         let x=99 ,y=90
+         console.log(x!=y)
+         if(x>y)
+         {
+            console.log("Hiii buby..")
+         }
+ 
+         //logical operator
+
+         //And
+         console.log(true && true)
+         console.log(true && false)
+         console.log(false && true)
+         console.log(false && false)
+         //OR
+         console.log(true|| true)
+         console.log(true || false)
+         console.log(false || true)
+         console.log(false || false)*/
+      
+
+      //Function  :- do not repeat yourself..
+
+     /* function avg(a ,b){
+        return ( a + b )
+       }
+
+       let c = avg(10,10)
+       let c1 = avg(20,10)
+
+       console.log(c,c1)*/
+
+       //if else ...
+      
+      /* let age = 22;
+       if(age>18)
+       {
+        console.log("You can Vote..")
+       }else{
+        console.log("you can not vote..")
+       }
+     */
+    
+     /*let age=25;
+
+     if(age<18)
+     {
+        console.log("My age is 18 now .. ")
+     }
+     else if(age <= 25)
+     {
+        console.log("My age is 25 now .. ")
+       
+     }
+     else if(age < 22)
+     {
+        console.log("My age is 22 now .. ")
+     }
+     else{
+        console.log("My age  now .. ")
+        
+     }*/
+     
+      // for loop 
+
+      /*
+      let a = [1,2,3,4,5]
+
+      for(let i=0;i<a.length;i++){
+
+        console.log(a[i])
+
+      }
+*/
+     //   For each loop 
+
+    /* let arr =[1,2,3,4,5]
+     arr.forEach(function(element)
+     {
+     console.log(element)
+     })*/
+      
+       //While-Loop
+
+    /* let j=0;
+     while(j<arr.length)
+     {
+        console.log(j)
+        j++;
+     }*/
+
+
+      //Do-While loop 
+
+    /*let k=0
+    let a =[1,2,3,4,5,6,7]
+    do
+    {
+       console.log(k)
+        k++
+    }
+    while(k<a.length)
+    */
+   
+    //break or continue
+
+    let arr=[1,2,3,4,5]
+    for(let a=0;a<=arr.length;a++)  
+    {
+       /* if(a==3)
+        {
+            continue;
+        }*/
+
+        /*if(a==3)
+        {
+            break
+           
+        }*/
+        console.log(arr[a])
+    }
+
+    </script>
+</body>
+</html>
